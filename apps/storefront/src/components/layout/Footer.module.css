@@ -1,0 +1,29 @@
+.footer { background: #1a1a1a; color: #aaa; font-size: 13px; }
+.top {
+  max-width: 1200px; margin: 0 auto; padding: 40px 20px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px;
+}
+.logo { height: 40px; width: auto; filter: brightness(0) invert(1); margin-bottom: 12px; }
+.brand p { font-size: 13px; line-height: 1.7; color: #777; margin-bottom: 12px; }
+.socials { display: flex; gap: 12px; }
+.socials a { color: #777; font-size: 12px; transition: color 0.2s; }
+.socials a:hover { color: var(--red); }
+.col h4 {
+  color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #333;
+}
+.col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.col ul a { color: #777; font-size: 13px; transition: color 0.2s; }
+.col ul a:hover { color: var(--red); }
+.address { font-style: normal; color: #777; line-height: 1.8; font-size: 13px; }
+.email { display: block; color: #777; margin-top: 8px; font-size: 12px; }
+.email:hover { color: var(--red); }
+.bottom {
+  border-top: 1px solid #2a2a2a;
+  max-width: 1200px; margin: 0 auto; padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+.bottom p { color: #555; font-size: 12px; }
+.payments { height: 26px; width: auto; filter: brightness(0.55); }
+@media (max-width: 768px) { .top { grid-template-columns: 1fr 1fr; gap: 24px; } }
+@media (max-width: 480px) { .top { grid-template-columns: 1fr; } }

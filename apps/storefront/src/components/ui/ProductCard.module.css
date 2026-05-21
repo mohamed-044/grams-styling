@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+.imageWrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.image { object-fit: cover; transition: transform 0.3s; }
+.card:hover .image { transform: scale(1.04); }
+.imagePlaceholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: #bbb;
+}
+.ratingBadge {
+  position: absolute; top: 8px; left: 8px;
+  background: #fff; border: 1px solid #ddd;
+  font-size: 11px; padding: 3px 7px; color: #f39c12;
+}
+
+.info { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+
+.name {
+  font-size: 13.5px; color: #1a1a1a; font-weight: 600; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.name:hover { color: var(--red); }
+
+.price { font-size: 14px; color: #333; font-weight: 600; }
+.priceNote { display: block; font-size: 11px; color: #888; font-weight: 400; }
+
+.btnSelect {
+  display: inline-block;
+  padding: 7px 14px;
+  background: var(--red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 2px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+.btnSelect:hover { background: var(--red-dark); color: #fff; }
+
+.variantNote { font-size: 11px; color: #888; font-style: italic; line-height: 1.4; }
