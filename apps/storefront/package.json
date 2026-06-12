@@ -1,0 +1,26 @@
+{
+  "name": "storefront",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19",
+    "react-dom": "^19",
+    "@medusajs/js-sdk": "^2.0.0",
+    "@medusajs/types": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5",
+    "eslint": "^8",
+    "eslint-config-next": "^15.0.0"
+  }
+}

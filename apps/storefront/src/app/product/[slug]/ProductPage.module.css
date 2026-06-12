@@ -1,0 +1,174 @@
+.page { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+
+.breadcrumb {
+  padding: 16px 0 8px;
+  font-size: 12px;
+  color: #888;
+}
+.breadcrumb a { color: #888; }
+.breadcrumb a:hover { color: var(--red); }
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 24px 0;
+}
+@media (max-width: 768px) { .layout { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ── Gallery ── */
+.gallery { display: flex; flex-direction: column; gap: 10px; }
+.mainImgWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+.mainImg { object-fit: cover; transition: transform 0.3s; }
+.mainImgWrap:hover .mainImg { transform: scale(1.03); }
+.noImg { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 13px; }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumb {
+  position: relative;
+  width: 72px; height: 72px;
+  border: 2px solid transparent;
+  background: #f5f5f5;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.thumb:hover { border-color: #ccc; }
+.thumbActive { border-color: var(--red) !important; }
+
+/* ── Product info ── */
+.info { display: flex; flex-direction: column; gap: 16px; }
+.title { font-size: 22px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
+
+.priceWrap { padding: 4px 0; }
+.price { font-size: 26px; font-weight: 700; color: #333; }
+.priceUnavailable { font-size: 16px; color: #999; }
+
+/* ── Options ── */
+.options { display: flex; flex-direction: column; gap: 16px; }
+.optGroup { display: flex; flex-direction: column; gap: 8px; }
+.optLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.optSelected {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #666;
+}
+.optValues { display: flex; gap: 8px; flex-wrap: wrap; }
+.optValuesCol { flex-direction: column; gap: 6px; }
+
+.optBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 13px;
+  color: #333;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.optBtn:hover { border-color: var(--red); color: var(--red); }
+.optBtnActive {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+.optBtnActive:hover { background: var(--red-dark); border-color: var(--red-dark); }
+.optBtnSeries {
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 110px;
+  justify-content: center;
+}
+
+/* Finish swatches */
+.swatch {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Dispatch ── */
+.dispatch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  padding: 10px 14px;
+  border-radius: 3px;
+}
+.dispatchIcon { font-size: 16px; }
+
+/* ── Add to cart ── */
+.addToCart { display: flex; gap: 12px; align-items: center; }
+.qtyControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.qtyControl button {
+  width: 34px; height: 40px;
+  background: #f5f5f5;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+}
+.qtyControl button:hover { background: #e8e8e8; }
+.qtyControl span { width: 44px; text-align: center; font-size: 14px; font-weight: 600; }
+.btnAdd {
+  flex: 1;
+  max-width: 240px;
+  padding: 11px 24px;
+  background: var(--red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btnAdd:hover:not(:disabled) { background: var(--red-dark); }
+.btnAdd:disabled { background: #ccc; cursor: not-allowed; }
+
+/* ── SKU / Description ── */
+.sku { font-size: 12px; color: #aaa; font-family: monospace; }
+.description { border-top: 1px solid #eee; padding-top: 20px; }
+.description h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  color: #333;
+}
+.description p { font-size: 13px; color: #555; line-height: 1.8; }
+.description p * { max-width: 100%; }

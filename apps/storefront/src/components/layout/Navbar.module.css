@@ -1,0 +1,173 @@
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 70px;
+}
+.logoLink { display: flex; align-items: center; margin-right: 12px; flex-shrink: 0; }
+.logo { height: 48px; width: auto; object-fit: contain; }
+
+.nav { display: flex; align-items: center; flex: 1; }
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 12px;
+  height: 70px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.navLink:hover { color: var(--red); border-bottom-color: var(--red); }
+.caret { font-size: 9px; }
+
+/* Mega menu */
+.megaParent { position: relative; }
+.megaMenu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  width: 820px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: 20px 24px;
+  z-index: 200;
+}
+.megaParent:hover .megaMenu { display: block; }
+.megaGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px 16px;
+}
+.megaCol { min-width: 0; }
+.megaBrandTitle {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 4px;
+  transition: color 0.15s;
+}
+.megaBrandTitle:hover { color: var(--red); }
+.megaList { list-style: none; padding: 0; }
+.megaList li { line-height: 1; margin-bottom: 1px; }
+.megaList a { font-size: 12px; color: #555; display: block; padding: 2px 0; transition: color 0.15s; }
+.megaList a:hover { color: var(--red); }
+.megaGroupLabel {
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 5px;
+  display: block;
+  padding: 2px 0;
+}
+
+/* Right actions */
+.actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.iconBtn {
+  background: none;
+  border: none;
+  padding: 6px;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.iconBtn:hover { color: var(--red); }
+.cartBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--red);
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background 0.2s;
+  border: none;
+  text-decoration: none;
+}
+.cartBtn:hover { background: var(--red-dark); color: #fff; }
+.cartCount {
+  background: #fff;
+  color: var(--red);
+  border-radius: 50%;
+  width: 18px; height: 18px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.searchForm { display: flex; align-items: center; gap: 6px; }
+.searchInput {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 2px;
+  width: 180px;
+  outline: none;
+  font-family: inherit;
+}
+.searchInput:focus { border-color: var(--red); }
+.searchSubmit {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+.searchClose { background: none; border: none; font-size: 14px; color: #888; padding: 4px; }
+
+/* Hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: #333; border-radius: 1px; }
+
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid #eee;
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+  .nav.open { display: flex; }
+  .navLink { height: auto; padding: 10px 20px; width: 100%; }
+  .megaMenu { position: static; width: 100%; box-shadow: none; border: none; border-top: 1px solid #eee; }
+  .megaGrid { grid-template-columns: repeat(2, 1fr); }
+}

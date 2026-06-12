@@ -1,0 +1,29 @@
+.topbar {
+  background: #1a1a1a;
+  color: #bbb;
+  font-size: 12px;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.left { display: flex; gap: 14px; flex-wrap: wrap; }
+.left a { color: #bbb; transition: color 0.2s; }
+.left a:hover { color: #fff; }
+.right { display: flex; gap: 4px; align-items: center; }
+.currBtn {
+  background: none;
+  border: 1px solid #444;
+  color: #bbb;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+.currBtn:hover, .currBtn.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
