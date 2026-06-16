@@ -60,3 +60,4 @@ Thumbs.db
 
 # Client data (local only)
 packages/backend/medusa-data/
+storefront-install.log
