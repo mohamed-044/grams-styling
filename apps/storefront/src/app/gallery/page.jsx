@@ -1,3 +1,9 @@
+/**
+ * CustomersGalleryPage — Page galerie clients (placeholder).
+ *
+ * Page statique en attente d'intégration. Affiche un message
+ * "coming soon".
+ */
 export default function CustomersGalleryPage() {
   return (
     <div className="container" style={{padding:"40px 20px"}}>

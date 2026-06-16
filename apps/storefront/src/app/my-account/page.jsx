@@ -1,3 +1,9 @@
+/**
+ * MyAccountPage — Page mon compte (placeholder).
+ *
+ * Page statique invitant l'utilisateur à se connecter
+ * pour gérer ses commandes.
+ */
 export default function MyAccountPage() {
   return (
     <div className="container" style={{padding:"40px 20px"}}>

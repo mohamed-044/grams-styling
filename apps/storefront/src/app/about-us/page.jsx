@@ -1,3 +1,8 @@
+/**
+ * AboutUsPage — Page "À propos".
+ *
+ * Page statique présentant brièvement G.R.A.M.S Styling.
+ */
 export default function AboutUsPage() {
   return (
     <div className="container" style={{padding:"40px 20px"}}>

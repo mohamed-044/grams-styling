@@ -18,6 +18,13 @@ const ITEMS = [
   },
 ];
 
+/**
+ * TrustStrip — Bandeau de confiance statique affiché sur la homepage.
+ *
+ * Présente trois engagements (support client, retour sous 30 jours,
+ * paiement sécurisé) avec icônes. Composant serveur.
+ * Ne prend aucune prop.
+ */
 export default function TrustStrip() {
   return (
     <section className={styles.strip}>

@@ -5,6 +5,14 @@ import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import styles from "./CartDrawer.module.css";
 
+/**
+ * CartDrawer — Panier latéral coulissant (drawer).
+ *
+ * S'ouvre au clic sur l'icône panier (Navbar). Permet de
+ * modifier les quantités, supprimer des articles et accéder
+ * au checkout. Lit et écrit dans CartContext.
+ * Ne prend aucune prop.
+ */
 export default function CartDrawer() {
   const { items, removeItem, updateQty, totalPrice, isOpen, setIsOpen } = useCart();
   const { formatAmount } = useCurrency();

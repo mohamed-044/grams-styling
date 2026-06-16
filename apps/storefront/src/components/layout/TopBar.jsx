@@ -2,6 +2,13 @@
 import { useCurrency } from "@/context/CurrencyContext";
 import styles from "./TopBar.module.css";
 
+/**
+ * TopBar — Bandeau supérieur fixe au-dessus du header principal.
+ *
+ * Affiche les coordonnées (email, réseaux sociaux) et un sélecteur
+ * de devise (GBP / EUR / USD) alimenté par CurrencyContext.
+ * Ne prend aucune prop.
+ */
 export default function TopBar() {
   const { currency, setCurrency, RATES } = useCurrency();
 

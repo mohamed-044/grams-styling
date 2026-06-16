@@ -5,6 +5,11 @@ import ProductCard from "@/components/ui/ProductCard";
 import { BRANDS } from "@/data/mock-products";
 import styles from "./ShopPage.module.css";
 
+/**
+ * Extrait la clé de marque depuis le handle d'un produit.
+ * @param {import('@medusajs/medusa-js').Product} product
+ * @returns {string|null}
+ */
 function getBrandKey(product) {
   if (!product?.handle) return null;
   const firstSegment = product.handle.split("-")[0].toLowerCase();
@@ -14,6 +19,12 @@ function getBrandKey(product) {
   return null;
 }
 
+/**
+ * Extrait la clé de modèle depuis le handle d'un produit pour une marque donnée.
+ * @param {import('@medusajs/medusa-js').Product} product
+ * @param {string} brandKey - Clé de la marque.
+ * @returns {string|null}
+ */
 function getModelKey(product, brandKey) {
   if (!product?.handle || !brandKey) return null;
   const handle = product.handle.toLowerCase();
@@ -30,6 +41,15 @@ function getModelKey(product, brandKey) {
   return null;
 }
 
+/**
+ * ShopClient — Page boutique côté client avec filtres et recherche.
+ *
+ * @param {import('@medusajs/medusa-js').Product[]} products - Tous les produits disponibles.
+ * @param {string|undefined} brand - Slug de la marque sélectionnée (filtre).
+ * @param {string|undefined} model - Slug du modèle sélectionné (filtre).
+ * @param {string} pageTitle - Titre affiché dans l'en-tête de la page.
+ * @param {string} search - Terme de recherche initial (depuis query string).
+ */
 export default function ShopClient({ products, brand, model, pageTitle, search: initialSearch = "" }) {
   const [search, setSearch] = useState(initialSearch);
   const [openBrand, setOpenBrand] = useState(brand ?? null);

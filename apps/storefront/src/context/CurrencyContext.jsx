@@ -9,6 +9,15 @@ const RATES = {
 
 const CurrencyContext = createContext(null);
 
+/**
+ * CurrencyProvider — Contexte de devise simple avec taux fixes.
+ *
+ * Propose trois devises (GBP, EUR, USD) avec des taux de change
+ * statiques. Exporte formatAmount() pour les montants Medusa (pence)
+ * et formatGBP() pour les floats de mock data.
+ *
+ * @param {{ children: React.ReactNode }} props
+ */
 export function CurrencyProvider({ children }) {
   const [currency, setCurrency] = useState("GBP");
   const { symbol, rate } = RATES[currency];

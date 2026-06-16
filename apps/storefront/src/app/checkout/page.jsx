@@ -6,6 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./CheckoutPage.module.css";
 
+/**
+ * CheckoutPage — Page de validation de commande.
+ *
+ * Affiche un formulaire de contact, d'adresse de livraison
+ * (placeholder pour le paiement) et un récapitulatif complet
+ * du panier. Utilise CartContext et CurrencyContext.
+ */
 export default function CheckoutPage() {
   const { items, totalItems, totalPrice } = useCart();
   const { formatAmount } = useCurrency();

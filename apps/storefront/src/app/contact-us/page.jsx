@@ -1,3 +1,8 @@
+/**
+ * ContactUsPage — Page de contact statique.
+ *
+ * Affiche l'adresse email de contact. Page serveur simple.
+ */
 export default function ContactUsPage() {
   return (
     <div className="container" style={{padding:"40px 20px"}}>

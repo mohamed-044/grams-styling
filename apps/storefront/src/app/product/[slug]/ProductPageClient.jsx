@@ -6,6 +6,16 @@ import { useCurrency } from "@/context/CurrencyContext";
 import { useCart } from "@/context/CartContext";
 import styles from "./ProductPage.module.css";
 
+/**
+ * ProductPageClient — Page détail produit côté client.
+ *
+ * Affiche la galerie d'images, le titre, le prix formaté,
+ * les sélecteurs d'options (série, finition, etc.), la
+ * quantité et le bouton d'ajout au panier. Gère la sélection
+ * de variante et le calcul du prix.
+ *
+ * @param {{ product: import('@medusajs/medusa-js').Product }} props
+ */
 export default function ProductPageClient({ product }) {
   const { formatAmount } = useCurrency();
   const { addItem } = useCart();
@@ -128,6 +138,11 @@ export default function ProductPageClient({ product }) {
   );
 }
 
+/**
+ * OptionSelector — Sélecteur pour une option produit (Série, Finish, Fitting kit…).
+ *
+ * @param {{ option: { title: string, values: string[] }, selected: string, onSelect: (value: string) => void }} props
+ */
 function OptionSelector({ option, selected, onSelect }) {
   const isFitKit = option.title === "Fitting kit";
   return (
@@ -150,12 +165,30 @@ function OptionSelector({ option, selected, onSelect }) {
   );
 }
 
+/**
+ * FinishSwatch — Petit carré de couleur représentant une finition.
+ *
+ * Mappe les noms de finition (white, black, carbon fiber, kevlar)
+ * vers des couleurs CSS. Utilisé dans OptionSelector pour l'option "Finish".
+ *
+ * @param {{ value: string }} props
+ */
 function FinishSwatch({ value }) {
   const colors = { "white":"#f5f5f5", "black":"#1a1a1a", "carbon fiber":"#2a2a2a", "kevlar":"#8b7355" };
   const bg = colors[value.toLowerCase()] ?? "#ccc";
   return <span className={styles.swatch} style={{ background: bg, border: bg === "#f5f5f5" ? "1px solid #ccc" : "none" }} />;
 }
 
+/**
+ * Construit la liste des options disponibles depuis un produit Medusa.
+ *
+ * Gère les formats variés (tableau d'objets, tableau de strings,
+ * options sur les variantes). Retourne un tableau de
+ * { title: string, values: string[] }.
+ *
+ * @param {import('@medusajs/medusa-js').Product} product
+ * @returns {Array<{ title: string, values: string[] }>}
+ */
 function buildOptions(product) {
   if (product.options?.length) {
     if (typeof product.options[0] === "string") {
@@ -189,6 +222,12 @@ function buildOptions(product) {
   return Object.entries(map).map(([title, vals]) => ({ title, values: Array.from(vals) }));
 }
 
+/**
+ * Trouve la variante correspondant à la sélection d'options.
+ * @param {import('@medusajs/medusa-js').ProductVariant[]} variants
+ * @param {Record<string, string>} selected - Options sélectionnées.
+ * @returns {import('@medusajs/medusa-js').ProductVariant|null}
+ */
 function findVariant(variants, selected) {
   if (!variants.length) return null;
   return variants.find(v => {
@@ -199,6 +238,11 @@ function findVariant(variants, selected) {
   }) ?? null;
 }
 
+/**
+ * Extrait le prix (en pence/cents) depuis une variante.
+ * @param {import('@medusajs/medusa-js').ProductVariant|null} variant
+ * @returns {number|null}
+ */
 function getVariantPrice(variant) {
   if (!variant) return null;
   const cp = variant.calculated_price;
@@ -208,6 +252,11 @@ function getVariantPrice(variant) {
   return gbp?.amount ?? variant.prices?.[0]?.amount ?? null;
 }
 
+/**
+ * Retourne le délai d'expédition estimé selon la série.
+ * @param {string|undefined} series - Valeur de l'option "Series".
+ * @returns {string|null}
+ */
 function getDispatchTime(series) {
   if (!series) return null;
   return series.toLowerCase().includes("pro") || series.toLowerCase().includes("carbon")
@@ -215,10 +264,20 @@ function getDispatchTime(series) {
     : "Dispatch time: 2–10 working days";
 }
 
+/**
+ * Nettoie un libellé d'option (supprime les IDs techniques, entités HTML).
+ * @param {string} val
+ * @returns {string}
+ */
 function cleanLabel(val) {
   return val.replace(/\s*ID:\s*G\d+/g, "").replace(/&amp;/g, "&").trim();
 }
 
+/**
+ * Nettoie la description HTML (supprime les images, paragraphes vides).
+ * @param {string} html
+ * @returns {string}
+ */
 function sanitizeDescription(html) {
   return html.replace(/<img[^>]*>/gi, "").replace(/<p>\s*<\/p>/gi, "").trim();
 }

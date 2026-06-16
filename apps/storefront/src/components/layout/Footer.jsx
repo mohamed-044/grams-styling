@@ -2,6 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
+/**
+ * Footer — Pied de page du site.
+ *
+ * Affiche le logo, une description de la marque, les liens
+ * d'information et de politiques, l'adresse postale et les
+ * moyens de paiement acceptés. Composant serveur (pas de "use client").
+ * Ne prend aucune prop.
+ */
 export default function Footer() {
   return (
     <footer className={styles.footer}>

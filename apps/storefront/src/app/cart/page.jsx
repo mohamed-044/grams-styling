@@ -5,6 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./CartPage.module.css";
 
+/**
+ * CartPage — Page panier complète.
+ *
+ * Affiche la liste des articles avec image, options, quantité,
+ * prix unitaire et total. Propose un récapitulatif de commande
+ * et un lien vers le checkout. Utilise CartContext et CurrencyContext.
+ */
 export default function CartPage() {
   const { items, removeItem, updateQty, totalItems, totalPrice, clearCart } = useCart();
   const { formatAmount } = useCurrency();

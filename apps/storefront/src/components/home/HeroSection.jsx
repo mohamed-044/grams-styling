@@ -1,5 +1,12 @@
 import styles from "./HeroSection.module.css";
 
+/**
+ * HeroSection — Section hero de la page d'accueil.
+ *
+ * Affiche le logo textuel, un slogan, une liste d'avantages
+ * clients et deux CTA (boutique / contact). Composant serveur.
+ * Ne prend aucune prop.
+ */
 export default function HeroSection() {
   return (
     <section className={styles.hero}>

@@ -16,6 +16,14 @@ const NAV_LINKS = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
+/**
+ * Navbar — Barre de navigation principale responsive.
+ *
+ * Composant client avec menu hamburger sur mobile, méga-menu
+ * au survol du lien "Products", barre de recherche, icônes
+ * compte et panier. Lit le nombre d'articles depuis CartContext.
+ * Ne prend aucune prop.
+ */
 export default function Navbar() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -90,6 +98,12 @@ export default function Navbar() {
   );
 }
 
+/**
+ * MegaMenu — Sous-menu déroulant affiché dans la navigation "Products".
+ *
+ * Parcourt la constante BRANDS et génère une grille de colonnes
+ * avec le nom de chaque marque et la liste de ses modèles.
+ */
 function MegaMenu() {
   return (
     <div className={styles.megaMenu}>
@@ -120,6 +134,9 @@ function MegaMenu() {
   );
 }
 
+/** Icône SVG de loupe pour la recherche. */
 const SearchIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>;
+/** Icône SVG de profil / compte utilisateur. */
 const AccountIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
+/** Icône SVG de panier pour le bouton d'ouverture du drawer. */
 const CartIcon = () => <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>;

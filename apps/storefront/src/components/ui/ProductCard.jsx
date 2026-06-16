@@ -33,6 +33,14 @@ function getVariantAmount(variant) {
   return fallback?.amount ?? null;
 }
 
+/**
+ * ProductCard — Carte produit affichée dans les grilles (boutique, featured).
+ *
+ * Affiche la vignette, le titre, la fourchette de prix formatée
+ * et un badge de notation. Gère les variantes multiples.
+ *
+ * @param {import('@medusajs/medusa-js').Product} product - Le produit à afficher.
+ */
 export default function ProductCard({ product }) {
   const { formatAmount } = useCurrency();
 
