@@ -6,21 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@medusajs/js-sdk": "^2.0.0",
+    "@medusajs/types": "^2.0.0",
     "next": "^15.0.0",
     "react": "^19",
-    "react-dom": "^19",
-    "@medusajs/js-sdk": "^2.0.0",
-    "@medusajs/types": "^2.0.0"
+    "react-dom": "^19"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^8",
-    "eslint-config-next": "^15.0.0"
+    "eslint-config-next": "^15.0.0",
+    "jsdom": "^29.1.1",
+    "typescript": "^5",
+    "vercel": "^54.14.0",
+    "vitest": "^4.1.9"
   }
 }
