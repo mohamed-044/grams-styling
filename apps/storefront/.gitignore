@@ -1,0 +1,4 @@
+*.vercel
+*.log
+*.txt
+src/data/mock-products.js
