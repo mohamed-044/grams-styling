@@ -54,7 +54,7 @@ export default function ShopClient({ products, brand, model, pageTitle, search: 
 
   return (
     <div className={styles.page}>
-      <aside className={styles.sidebar}>
+      <aside className={styles.sidebar} aria-label="Shop by brand">
         <h2 className={styles.sidebarTitle}>Shop by Brand</h2>
         <Link href="/shop" className={`${styles.brandLink} ${!brand ? styles.brandActive : ""}`}>
           All Products
@@ -70,7 +70,7 @@ export default function ShopClient({ products, brand, model, pageTitle, search: 
                 onClick={() => setOpenBrand(isOpen ? null : key.toLowerCase())}
               >
                 <span>{b.label}</span>
-                {hasModels && <span className={styles.chevron}>{isOpen ? "▾" : "▸"}</span>}
+                {hasModels && <span className={styles.chevron} aria-hidden="true">{isOpen ? "▾" : "▸"}</span>}
               </button>
               {isOpen && hasModels && (
                 <div className={styles.modelList}>
@@ -106,6 +106,7 @@ export default function ShopClient({ products, brand, model, pageTitle, search: 
             value={search}
             onChange={e => setSearch(e.target.value)}
             className={styles.searchInput}
+            aria-label="Search products"
           />
         </div>
 

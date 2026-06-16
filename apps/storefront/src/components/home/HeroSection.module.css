@@ -3,9 +3,9 @@
 .title { font-size: 36px; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 14px; }
 .tagline { font-size: 15px; color: #ccc; line-height: 1.7; margin-bottom: 20px; }
 .bullets { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin-bottom: 28px; }
-.bullets li { font-size: 13px; color: #aaa; }
+.bullets li { font-size: 13px; color: #bbb; }
 .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btnPrimary { padding: 11px 28px; background: var(--red); color: #fff; font-weight: 600; font-size: 14px; border-radius: 2px; transition: background 0.2s; }
 .btnPrimary:hover { background: var(--red-dark); color: #fff; }
-.btnGhost { padding: 11px 28px; border: 1px solid #555; color: #ccc; font-size: 14px; border-radius: 2px; transition: all 0.2s; }
+.btnGhost { padding: 11px 28px; border: 1px solid #888; color: #ccc; font-size: 14px; border-radius: 2px; transition: all 0.2s; }
 .btnGhost:hover { border-color: #aaa; color: #fff; }

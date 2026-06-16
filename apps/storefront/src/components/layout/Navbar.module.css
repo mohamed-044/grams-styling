@@ -77,7 +77,7 @@
 .megaList a:hover { color: var(--red); }
 .megaGroupLabel {
   font-size: 10px;
-  color: #999;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 5px;
@@ -127,7 +127,7 @@
 }
 .searchForm { display: flex; align-items: center; gap: 6px; }
 .searchInput {
-  border: 1px solid var(--border);
+  border: 1px solid #888;
   padding: 6px 10px;
   font-size: 13px;
   border-radius: 2px;
@@ -146,7 +146,7 @@
   letter-spacing: 0.05em;
   border-radius: 2px;
 }
-.searchClose { background: none; border: none; font-size: 14px; color: #888; padding: 4px; }
+.searchClose { background: none; border: none; font-size: 14px; color: #666; padding: 4px; }
 
 /* Hamburger */
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; }

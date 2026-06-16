@@ -20,14 +20,15 @@ export default function Footer() {
             We make lightweight, performance-oriented body panels that fit perfectly on your car.
             Our customers give us a satisfaction rate of over 99%!
           </p>
-          <div className={styles.socials}>
+          <nav className={styles.socials} aria-label="Social media">
             <a href="https://www.instagram.com/GRAMSSTYLING/" target="_blank" rel="noreferrer">Instagram</a>
             <a href="https://www.facebook.com/gramsstyling" target="_blank" rel="noreferrer">Facebook</a>
-          </div>
+          </nav>
         </div>
 
         <div className={styles.col}>
           <h4>Info</h4>
+          <nav aria-label="Info links">
           <ul>
             <li><Link href="/about-us">About Us</Link></li>
             <li><Link href="/contact-us">Contact Us</Link></li>
@@ -35,15 +36,18 @@ export default function Footer() {
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/gallery">Customers Gallery</Link></li>
           </ul>
+          </nav>
         </div>
 
         <div className={styles.col}>
           <h4>Policies</h4>
+          <nav aria-label="Policies links">
           <ul>
             <li><Link href="/shipping">Shipping</Link></li>
             <li><Link href="/returns-policy">Return Policy</Link></li>
             <li><Link href="/privacy-policy">Privacy &amp; Cookies</Link></li>
           </ul>
+          </nav>
         </div>
 
         <div className={styles.col}>

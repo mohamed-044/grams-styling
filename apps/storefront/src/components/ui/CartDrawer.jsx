@@ -17,16 +17,16 @@ export default function CartDrawer() {
       <div className={styles.overlay} onClick={() => setIsOpen(false)} />
 
       {/* Drawer */}
-      <div className={styles.drawer}>
+      <div className={styles.drawer} role="dialog" aria-modal="true" aria-label="Shopping basket">
         <div className={styles.header}>
           <h2 className={styles.title}>Your Basket</h2>
-          <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>&#10005;</button>
+          <button type="button" className={styles.closeBtn} onClick={() => setIsOpen(false)} aria-label="Close basket">&#10005;</button>
         </div>
 
         {items.length === 0 ? (
           <div className={styles.empty}>
             <p>Your basket is empty.</p>
-            <button className={styles.continueShopping} onClick={() => setIsOpen(false)}>
+            <button type="button" className={styles.continueShopping} onClick={() => setIsOpen(false)}>
               Continue Shopping
             </button>
           </div>
@@ -61,19 +61,19 @@ export default function CartDrawer() {
                     <div className={styles.itemFooter}>
                       {/* Qty control */}
                       <div className={styles.qtyControl}>
-                        <button onClick={() => updateQty(item.variantId, item.qty - 1)}>−</button>
+                        <button type="button" onClick={() => updateQty(item.variantId, item.qty - 1)} aria-label="Decrease quantity">−</button>
                         <span>{item.qty}</span>
-                        <button onClick={() => updateQty(item.variantId, item.qty + 1)}>+</button>
+                        <button type="button" onClick={() => updateQty(item.variantId, item.qty + 1)} aria-label="Increase quantity">+</button>
                       </div>
                       <span className={styles.itemPrice}>{formatAmount(item.price * item.qty)}</span>
                     </div>
                   </div>
 
                   {/* Remove */}
-                  <button
+                  <button type="button"
                     className={styles.removeBtn}
                     onClick={() => removeItem(item.variantId)}
-                    aria-label="Remove"
+                    aria-label={`Remove ${item.title}`}
                   >
                     &#10005;
                   </button>
@@ -90,7 +90,7 @@ export default function CartDrawer() {
               <Link href="/checkout" className={styles.checkoutBtn} onClick={() => setIsOpen(false)}>
                 Proceed to Checkout
               </Link>
-              <button className={styles.continueBtn} onClick={() => setIsOpen(false)}>
+              <button type="button" className={styles.continueBtn} onClick={() => setIsOpen(false)}>
                 Continue Shopping
               </button>
             </div>

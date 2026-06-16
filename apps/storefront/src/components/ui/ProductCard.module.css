@@ -19,11 +19,11 @@
 .imagePlaceholder {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 12px; color: #bbb;
+  font-size: 12px; color: #666;
 }
 .ratingBadge {
   position: absolute; top: 8px; left: 8px;
-  background: #fff; border: 1px solid #ddd;
+  background: #1a1a1a; border: none;
   font-size: 11px; padding: 3px 7px; color: #f39c12;
 }
 
@@ -36,7 +36,7 @@
 .name:hover { color: var(--red); }
 
 .price { font-size: 14px; color: #333; font-weight: 600; }
-.priceNote { display: block; font-size: 11px; color: #888; font-weight: 400; }
+.priceNote { display: block; font-size: 11px; color: #666; font-weight: 400; }
 
 .btnSelect {
   display: inline-block;
@@ -51,4 +51,4 @@
 }
 .btnSelect:hover { background: var(--red-dark); color: #fff; }
 
-.variantNote { font-size: 11px; color: #888; font-style: italic; line-height: 1.4; }
+.variantNote { font-size: 11px; color: #666; font-style: italic; line-height: 1.4; }

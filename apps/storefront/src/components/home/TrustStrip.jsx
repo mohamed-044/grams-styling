@@ -25,7 +25,7 @@ export default function TrustStrip() {
         <div className={styles.grid}>
           {ITEMS.map(item => (
             <div key={item.title} className={styles.item}>
-              <span className={styles.icon}>{item.icon}</span>
+              <span className={styles.icon} aria-hidden="true">{item.icon}</span>
               <div>
                 <h3 className={styles.itemTitle}>{item.title}</h3>
                 <p className={styles.itemDesc}>{item.desc}</p>

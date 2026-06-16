@@ -55,12 +55,12 @@
 }
 .productTitle:hover { color: var(--red); }
 .optionsList {
-  list-style: none; font-size: 11px; color: #777;
+  list-style: none; font-size: 11px; color: #666;
   line-height: 1.8; margin-bottom: 8px;
 }
 .optKey { font-weight: 600; color: #555; }
 .removeLink {
-  background: none; border: none; color: #aaa;
+  background: none; border: none; color: #666;
   font-size: 11px; cursor: pointer; padding: 0;
   text-decoration: underline; transition: color 0.15s;
 }
@@ -76,7 +76,7 @@
 .qtyWrap { display: flex; }
 .qtyControl {
   display: flex; align-items: center;
-  border: 1px solid #ddd; border-radius: 2px; overflow: hidden;
+  border: 1px solid #888; border-radius: 2px; overflow: hidden;
 }
 .qtyControl button {
   width: 30px; height: 34px; background: #f5f5f5;
@@ -86,7 +86,7 @@
 .qtyControl button:hover { background: #e8e8e8; }
 .qtyInput {
   width: 40px; height: 34px; text-align: center;
-  border: none; border-left: 1px solid #ddd; border-right: 1px solid #ddd;
+  border: none; border-left: 1px solid #888; border-right: 1px solid #888;
   font-size: 13px; font-weight: 600; outline: none;
 }
 
@@ -96,7 +96,7 @@
   padding: 20px 0; flex-wrap: wrap;
 }
 .btnClear {
-  background: none; border: 1px solid #ddd; color: #888;
+  background: none; border: 1px solid #888; color: #666;
   font-size: 12px; padding: 8px 16px; border-radius: 2px;
   cursor: pointer; transition: all 0.15s;
 }
@@ -126,7 +126,7 @@
   display: flex; justify-content: space-between;
   font-size: 14px; color: #555;
 }
-.shippingNote { font-size: 12px; color: #888; font-style: italic; }
+.shippingNote { font-size: 12px; color: #666; font-style: italic; }
 .summaryTotal {
   font-size: 16px; font-weight: 700; color: #1a1a1a;
   padding-top: 12px; border-top: 1px solid var(--border);
@@ -141,14 +141,14 @@
 .paymentIcons { text-align: center; margin-bottom: 16px; }
 .paymentImg { height: 24px; width: auto; display: inline-block; filter: brightness(0.7); }
 .trustItems { display: flex; flex-direction: column; gap: 6px; }
-.trustItem { font-size: 12px; color: #777; }
+.trustItem { font-size: 12px; color: #666; }
 
 /* Empty */
 .empty {
   max-width: 480px; margin: 80px auto; text-align: center; padding: 0 20px;
 }
 .emptyTitle { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
-.emptyDesc { font-size: 15px; color: #888; margin-bottom: 28px; }
+.emptyDesc { font-size: 15px; color: #666; margin-bottom: 28px; }
 .btnShop {
   display: inline-block; padding: 12px 32px;
   background: var(--red); color: #fff;

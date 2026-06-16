@@ -67,9 +67,10 @@ export default function ProductPageClient({ product }) {
           {images.length > 1 && (
             <div className={styles.thumbs}>
               {images.map((src, i) => (
-                <button key={i}
+                <button key={i} type="button"
                   className={`${styles.thumb} ${activeImg === src ? styles.thumbActive : ""}`}
-                  onClick={() => setActiveImg(src)}>
+                  onClick={() => setActiveImg(src)}
+                  aria-label={`View image ${i + 1} of ${images.length}`}>
                   <Image src={src} alt="" fill sizes="72px" unoptimized />
                 </button>
               ))}
@@ -97,18 +98,18 @@ export default function ProductPageClient({ product }) {
 
           {dispatchTime && (
             <div className={styles.dispatch}>
-              <span className={styles.dispatchIcon}>🚚</span>
+              <span className={styles.dispatchIcon} aria-hidden="true">🚚</span>
               <span>{dispatchTime}</span>
             </div>
           )}
 
           <div className={styles.addToCart}>
             <div className={styles.qtyControl}>
-              <button onClick={() => setQty(q => Math.max(1, q - 1))}>−</button>
+              <button type="button" onClick={() => setQty(q => Math.max(1, q - 1))} aria-label="Decrease quantity">−</button>
               <span>{qty}</span>
-              <button onClick={() => setQty(q => q + 1)}>+</button>
+              <button type="button" onClick={() => setQty(q => q + 1)} aria-label="Increase quantity">+</button>
             </div>
-            <button className={styles.btnAdd} disabled={!activeVariant} onClick={handleAddToCart}>
+            <button type="button" className={styles.btnAdd} disabled={!activeVariant} onClick={handleAddToCart}>
               {activeVariant ? "Add to basket" : "Select options"}
             </button>
           </div>
@@ -137,7 +138,7 @@ function OptionSelector({ option, selected, onSelect }) {
       </div>
       <div className={`${styles.optValues} ${isFitKit ? styles.optValuesCol : ""}`}>
         {option.values.map(val => (
-          <button key={val}
+          <button key={val} type="button"
             className={`${styles.optBtn} ${selected === val ? styles.optBtnActive : ""} ${option.title === "Series" ? styles.optBtnSeries : ""}`}
             onClick={() => onSelect(val)}>
             {option.title === "Finish" && <FinishSwatch value={val} />}

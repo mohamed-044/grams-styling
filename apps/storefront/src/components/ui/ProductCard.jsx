@@ -60,8 +60,8 @@ export default function ProductCard({ product }) {
           <div className={styles.imagePlaceholder}>No image</div>
         )}
         {product.rating && (
-          <div className={styles.ratingBadge}>
-            {"\u2605".repeat(product.rating)} Rated {product.rating}.00 out of 5
+          <div className={styles.ratingBadge} aria-label={`Rated ${product.rating}.00 out of 5`}>
+            {"\u2605".repeat(product.rating)}
           </div>
         )}
       </Link>
@@ -81,9 +81,9 @@ export default function ProductCard({ product }) {
           </div>
         )}
 
-        <Link href={`/product/${product.handle}`} className={styles.btnSelect}>
+        <span className={styles.btnSelect} aria-hidden="true">
           {hasVariants ? "Select options" : "Add to basket"}
-        </Link>
+        </span>
 
         {hasVariants && (
           <p className={styles.variantNote}>

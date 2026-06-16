@@ -109,7 +109,7 @@ export default function CheckoutPage() {
               </p>
             </section>
 
-            <Link href="/cart" className={styles.backLink}>← Back to basket</Link>
+            <Link href="/cart" className={styles.backLink}><span aria-hidden="true">←</span> Back to basket</Link>
           </div>
 
           {/* ── Order summary ── */}
@@ -163,9 +163,9 @@ export default function CheckoutPage() {
             </div>
 
             <div className={styles.trustItems}>
-              <div className={styles.trustItem}>🔒 Secure checkout</div>
-              <div className={styles.trustItem}>↩️ 30-day returns</div>
-              <div className={styles.trustItem}>🚚 Ships from UK & Europe</div>
+              <div className={styles.trustItem}><span aria-hidden="true">🔒</span> Secure checkout</div>
+              <div className={styles.trustItem}><span aria-hidden="true">↩️</span> 30-day returns</div>
+              <div className={styles.trustItem}><span aria-hidden="true">🚚</span> Ships from UK & Europe</div>
             </div>
           </div>
         </div>

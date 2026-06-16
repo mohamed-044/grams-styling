@@ -27,7 +27,7 @@ export default function CartPage() {
         <div className={styles.layout}>
           {/* ── Items table ── */}
           <div className={styles.items}>
-            <div className={styles.tableHeader}>
+            <div className={styles.tableHeader} aria-hidden="true">
               <span>Product</span>
               <span>Price</span>
               <span>Quantity</span>
@@ -56,7 +56,7 @@ export default function CartPage() {
                         ))}
                       </ul>
                     )}
-                    <button className={styles.removeLink} onClick={() => removeItem(item.variantId)}>
+                    <button type="button" className={styles.removeLink} onClick={() => removeItem(item.variantId)}>
                       Remove
                     </button>
                   </div>
@@ -70,15 +70,16 @@ export default function CartPage() {
                 {/* Qty */}
                 <div className={styles.qtyWrap}>
                   <div className={styles.qtyControl}>
-                    <button onClick={() => updateQty(item.variantId, item.qty - 1)}>−</button>
+                    <button type="button" onClick={() => updateQty(item.variantId, item.qty - 1)} aria-label="Decrease quantity">−</button>
                     <input
                       type="number"
                       min="1"
                       value={item.qty}
                       onChange={e => updateQty(item.variantId, parseInt(e.target.value) || 1)}
                       className={styles.qtyInput}
+                      aria-label={`Quantity for ${item.title}`}
                     />
-                    <button onClick={() => updateQty(item.variantId, item.qty + 1)}>+</button>
+                    <button type="button" onClick={() => updateQty(item.variantId, item.qty + 1)} aria-label="Increase quantity">+</button>
                   </div>
                 </div>
 
@@ -91,11 +92,11 @@ export default function CartPage() {
 
             {/* Clear cart */}
             <div className={styles.cartActions}>
-              <button className={styles.btnClear} onClick={clearCart}>
+              <button type="button" className={styles.btnClear} onClick={clearCart}>
                 Clear basket
               </button>
               <Link href="/shop" className={styles.btnContinue}>
-                ← Continue Shopping
+                <span aria-hidden="true">←</span> Continue Shopping
               </Link>
             </div>
           </div>
@@ -132,9 +133,9 @@ export default function CartPage() {
             </div>
 
             <div className={styles.trustItems}>
-              <div className={styles.trustItem}>🔒 Secure checkout</div>
-              <div className={styles.trustItem}>↩️ 30-day returns</div>
-              <div className={styles.trustItem}>🚚 Ships from UK & Europe</div>
+              <div className={styles.trustItem}><span aria-hidden="true">🔒</span> Secure checkout</div>
+              <div className={styles.trustItem}><span aria-hidden="true">↩️</span> 30-day returns</div>
+              <div className={styles.trustItem}><span aria-hidden="true">🚚</span> Ships from UK & Europe</div>
             </div>
           </div>
         </div>

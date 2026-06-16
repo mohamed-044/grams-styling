@@ -29,7 +29,7 @@
 }
 .brandLink:hover { color: var(--red); background: #fafafa; }
 .brandActive { color: var(--red) !important; background: #fff5f5 !important; }
-.chevron { font-size: 10px; color: #aaa; }
+.chevron { font-size: 10px; color: #666; }
 .modelList { background: #fafafa; border-top: 1px solid #f0f0f0; padding: 4px 0; }
 .modelLink {
   display: block; padding: 6px 16px 6px 28px;
@@ -44,14 +44,14 @@
   gap: 16px; margin-bottom: 20px; flex-wrap: wrap;
 }
 .pageTitle { font-size: 22px; font-weight: 700; color: #1a1a1a; }
-.productCount { font-size: 12px; color: #888; margin-top: 4px; }
+.productCount { font-size: 12px; color: #666; margin-top: 4px; }
 .searchInput {
-  border: 1px solid var(--border); padding: 8px 12px; font-size: 13px;
+  border: 1px solid #888; padding: 8px 12px; font-size: 13px;
   border-radius: 2px; width: 220px; outline: none; font-family: inherit;
 }
 .searchInput:focus { border-color: var(--red); }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
-.empty { padding: 60px 0; text-align: center; color: #888; }
+.empty { padding: 60px 0; text-align: center; color: #666; }
 .emptyLink { display: inline-block; margin-top: 12px; color: var(--red); font-size: 13px; font-weight: 600; }
